@@ -3,6 +3,25 @@ const minutesHand = document.querySelector('.min-hand');
 const hoursHand = document.querySelector('.hour-hand');
 const digitalSet = document.querySelector('.digitalSet');
 
+function updateClock() {
+  const now = new Date();
+  const options = { timeZone: 'Europe/Stockholm' };
+  const dateTime = now.toLocaleString('sv-SE', options);
+  
+  digitalSet.innerHTML = dateTime;
+
+  setHandRotation(secondsHand, now.getSeconds(), 60);
+  setHandRotation(minutesHand, now.getMinutes(), 60);
+  setHandRotation(hoursHand, now.getHours(), 12);
+}
+
+function setHandRotation(hand, timeValue, maxValue) {
+  const degrees = ((timeValue / maxValue) * 360) + 90;
+  hand.style.transform = `rotate(${degrees}deg)`;
+}
+
+setInterval(updateClock, 1000);
+
 // function setDate() {
 //   const now = new Date();
 
@@ -21,30 +40,30 @@ const digitalSet = document.querySelector('.digitalSet');
 //   console.log(hours)
 // }
 
-function setDate() {
-  const now = new Date();
+// function setDate() {
+//   const now = new Date();
 
-  setHandRotation(secondsHand, now.getSeconds(), 60);
-  setHandRotation(minutesHand, now.getMinutes(), 60);
-  setHandRotation(hoursHand, now.getHours(), 12);
-}
+//   setHandRotation(secondsHand, now.getSeconds(), 60);
+//   setHandRotation(minutesHand, now.getMinutes(), 60);
+//   setHandRotation(hoursHand, now.getHours(), 12);
+// }
 
-function setHandRotation(hand, timeValue, maxValue) {
-  const degrees = ((timeValue / maxValue) * 360) + 90;
-  hand.style.transform = `rotate(${degrees}deg)`;
-}
+// function setHandRotation(hand, timeValue, maxValue) {
+//   const degrees = ((timeValue / maxValue) * 360) + 90;
+//   hand.style.transform = `rotate(${degrees}deg)`;
+// }
 
-setInterval(setDate, 1000);
+// setInterval(setDate, 1000);
 
 
-function renderDigitalDate() {
+// function renderDigitalDate() {
   
-  const today = new Date();
-  const options = { timeZone: 'Europe/Stockholm' };
-  const dateTime = today.toLocaleString('sv-SE', options);
-  digitalSet.innerHTML = dateTime;
-}
+//   const today = new Date();
+//   const options = { timeZone: 'Europe/Stockholm' };
+//   const dateTime = today.toLocaleString('sv-SE', options);
+//   digitalSet.innerHTML = dateTime;
+// }
 
-setInterval(renderDigitalDate, 1000);
+// setInterval(renderDigitalDate, 1000);
 
 
