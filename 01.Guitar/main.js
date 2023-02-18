@@ -13,7 +13,7 @@ function playSound(e) {
 }
 
 function removeTransition(e) {
-  if (e.propertyName !== "transform")
+  if (e.propertyName !== "scale")
     return;
   this.classList.remove('playing');
 }
