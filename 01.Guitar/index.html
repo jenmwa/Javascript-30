@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="style.css" rel="stylesheet" type="text/CSS" />
+
+    <title>Javascript Guitar Sounds</title>
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="a" class="key">
+        <kbd>A</kbd>
+        <span class="sound">string E</span>
+      </div>
+      <div data-key="s" class="key">
+        <kbd>S</kbd>
+        <span class="sound">string A</span>
+      </div>
+      <div data-key="d" class="key">
+        <kbd>D</kbd>
+        <span class="sound">string D</span>
+      </div>
+      <div data-key="f" class="key">
+        <kbd>F</kbd>
+        <span class="sound">string G</span>
+      </div>
+      <div data-key="g" class="key">
+        <kbd>G</kbd>
+        <span class="sound"string>string B</span>
+      </div>
+      <div data-key="h" class="key">
+        <kbd>H</kbd>
+        <span class="sound">string e</span>
+      </div>
+    </div>
+
+    <audio data-key="a" src="sounds/guitar-single-chord-e.wav"></audio>
+    <audio data-key="s" src="sounds/guitar-single-chord-a_A.wav"></audio>
+    <audio data-key="d" src="sounds/guitar-single-chord-d_D.wav"></audio>
+    <audio data-key="f" src="sounds/guitar-single-chord-g_G.wav"></audio>
+    <audio data-key="g" src=""></audio>
+    <audio data-key="h" src="sounds/guitar-single-chord-e_E.wav"></audio>
+
+
+    <script src="main.js">
+    </script>
+  </body>
+</html>
